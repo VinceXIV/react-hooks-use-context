@@ -1,9 +1,13 @@
-import React from "react";
+import React, {useContext} from "react";
+import {myContext} from "./ContextProvider"
 
-function DarkModeToggle({ theme, setTheme }) {
+function DarkModeToggle() {
+  const {theme, setTheme} = useContext(myContext)
+
   function handleToggleTheme(e) {
     setTheme(e.target.checked ? "dark" : "light");
   }
+
   return (
     <label>
       Dark Mode
